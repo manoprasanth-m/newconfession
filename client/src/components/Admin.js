@@ -14,7 +14,7 @@ export default function Admin () {
             if (response.status === 200) {
                 // console.log(response.data)
               localStorage.setItem("user", JSON.stringify(response.data));
-              window.location.replace("./admin-home")
+              window.location.replace("./admin-dash")
             }
             return response.data;
           });
