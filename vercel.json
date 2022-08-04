@@ -3,6 +3,10 @@
         {
             "src":"../src/index.js",
             "use":"@vercel/node"
+        },
+        {
+      "src": "../client/build",    // path to your build folder
+      "use": "@vercel/static"
         }
     ],
     "routes":[
