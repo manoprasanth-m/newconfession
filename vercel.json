@@ -5,10 +5,17 @@
             "use":"@vercel/node"
         },
         {
-      "src": "../client/build",    // path to your build folder
-      "use": "@vercel/static"
+            "src": "../client/build",
+            "use": "@vercel/static"
         }
     ],
+
+    "rewrites": [
+        {
+          "source": "/(.*)",
+          "destination": "../src/index.js"
+        }
+      ],
     "routes":[
         {
             "src":"/.*",
