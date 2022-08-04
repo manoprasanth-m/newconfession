@@ -60,7 +60,7 @@ state = {
         try {
             // const posts = localStorage.getItem('options');
             // const options = JSON.parse(json)
-            Axios.get('http://127.0.0.1:3000/main')
+            Axios.get('/main')
             .then(response => {
                 this.setState({
                     options: response.data
