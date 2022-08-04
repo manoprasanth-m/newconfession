@@ -36,7 +36,7 @@ export default class AdminHome extends React.Component {
         
     
     deleteConfess = (optiontodelete) => {
-        Axios.delete(`http://127.0.0.1:3000/confess/${optiontodelete}`, { headers: AuthHeader() })
+        Axios.delete(`/confess/${optiontodelete}`, { headers: AuthHeader() })
         .then(res => {if(res.status === 200) 
             this.notifyMessage()
         }).then(
@@ -49,10 +49,10 @@ export default class AdminHome extends React.Component {
     }
 
     updateConfess = (optiontoupdate, optiontodelete) => {
-        Axios.post('http://127.0.0.1:3000/admin-review', {confess: optiontoupdate}, { headers: AuthHeader() })
+        Axios.post('/admin-review', {confess: optiontoupdate}, { headers: AuthHeader() })
         .then(res => {if(res.status === 200) 
             this.notifyMessage()
-        }).then (Axios.delete(`http://127.0.0.1:3000/confess/${optiontodelete}`, { headers: AuthHeader() }))
+        }).then (Axios.delete(`/confess/${optiontodelete}`, { headers: AuthHeader() }))
         
         .then(
             this.setState({ 
@@ -65,7 +65,7 @@ export default class AdminHome extends React.Component {
     componentDidMount() {
         try {
 
-            Axios.get('http://127.0.0.1:3000/admin-home', {
+            Axios.get('/admin-home', {
                 headers: AuthHeader()
                 })
             .then(response => {
