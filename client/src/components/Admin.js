@@ -9,7 +9,7 @@ export default function Admin () {
 
     const handleLogin = (e) =>{
         e.preventDefault()
-        Axios.post('http://127.0.0.1:3000/admin/login', {email, password})
+        Axios.post('/admin/login', {email, password})
         .then(response =>  {
             if (response.status === 200) {
                 // console.log(response.data)
@@ -25,7 +25,7 @@ export default function Admin () {
       }
 
     const getAdminBoard = () => {
-        return Axios.get( 'http://127.0.0.1:3000/confess', { headers: AuthHeader() });
+        return Axios.get( '/confess', { headers: AuthHeader() });
       }
 
 
