@@ -27,7 +27,7 @@ export default function AddOption (props) {
         e.preventDefault()
         // const inp = e.target.elements.option.value.trim()
         // setText({text: inp})
-        Axios.post('http://127.0.0.1:3000/confess', {confess: text})
+        Axios.post('/confess', {confess: text})
         .then(res => {if(res.status === 200) 
             notifyMessage()
             e.target.elements.option.value = ''
